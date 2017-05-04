@@ -1,0 +1,8 @@
+.data
+str1: .ascii "hello"
+str2: .ascii " "
+str3: .ascii "world"
+.text
+la $a0, str1    # 将字符串“hello”在内存中的首地址赋给$a0寄存器
+li $v0, 4       # 从$a0指向的地址开始读取并输出字符串，直到字符串结束
+syscall
