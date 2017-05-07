@@ -1,6 +1,0 @@
-[Desktop Entry]
-Comment=
-Terminal=false
-Name=Logisim汉化版
-Exec=java -jar "/home/flowingclouds/桌面/MyDocument/Logisim/logisim-generic-2.7.1_TRP汉化版.jar"
-Type=Application
