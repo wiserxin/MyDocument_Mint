@@ -98,7 +98,8 @@ int run_tools(char * s){
 int try_execl(char * input){
 		int i=0;
 		char path[30];
-		char *p [8]={"/usr/local/sbin/",
+		char *p [8]={
+					 "/usr/local/sbin/",
 					 "/usr/local/bin/",
 					 "/usr/sbin/",
 					 "/usr/bin/",
@@ -108,8 +109,13 @@ int try_execl(char * input){
 					 "/usr/local/games/"};//short path
 // all path is : /usr/local/sbin: /usr/local/bin: /usr/sbin: /usr/bin: /sbin: /bin: /usr/games: /usr/local/games:
 		//puts(input);
-		
-		
+		/*char local_path [128];
+		getcwd(local_path,sizeof(local_path)-2);
+		local_path[126]=0;
+		local_path[strlen(local_path)+1]='\0';
+		local_path[strlen(local_path)]='/';
+		puts(local_path);*/
+		//puts("hello--0");
 		//正常无参指令
 		for (i=0;i<8;i++){
 			strcpy(path,p[i]);
@@ -117,7 +123,10 @@ int try_execl(char * input){
 			if(execl(path,input,NULL)<0)
 				//printf("fail %d\n",i);
 				;
+				
 		}		
+		
+		//puts("hello--1");
 		
 		//带 > 的指令
 		char * split;
