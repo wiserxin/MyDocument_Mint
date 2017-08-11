@@ -1,0 +1,15 @@
+case $# in
+0)
+   echo usage: ccat file
+   exit 1;;
+esac
+case $1 in
+*.c)
+   echo c file: $1
+   awk '/\/\/.*/{print}/\/\*.*/' $1;;
+#   awk '/\/\/.*/{print}' $1;;
+#   head -6 $1;;
+*)
+   echo the file must be c file
+esac
+
